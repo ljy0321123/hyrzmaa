@@ -1,0 +1,224 @@
+{
+  "滑动寻找": {
+    "recognition": {
+      "type": "DirectHit",
+      "param": {}
+    },
+    "action": {
+      "type": "Swipe",
+      "param": {
+        "begin": [
+          970,
+          115,
+          50,
+          54
+        ],
+        "end": [
+          [
+            224,
+            115,
+            40,
+            54
+          ]
+        ]
+      }
+    },
+    "next": [
+      "尝试进入试炼之地"
+    ]
+  },
+  "尝试进入试炼之地": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": "之地"
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "post_delay": 500,
+    "next": [
+      "识别试炼之地特征",
+      "识别主页特征"
+    ]
+  },
+  "识别试炼之地特征": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": "已进入试炼之地特征.png"
+      }
+    },
+    "action": {
+      "type": "DoNothing",
+      "param": {}
+    },
+    "next": [
+      "进入生存挑战"
+    ]
+  },
+  "进入生存挑战": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": "生存挑战.png"
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "next": [
+      "开始扫荡生存挑战"
+    ]
+  },
+  "开始扫荡生存挑战": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": "试炼之地开始扫荡.png"
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "post_delay": 1000,
+    "next": [
+      "生存挑战准备就绪",
+      "确认扫荡券数量足够"
+    ]
+  },
+  "生存挑战准备就绪": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": "试炼之地准备就绪.png"
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "post_delay": 1000,
+    "next": [
+      "确认准备就绪子页面"
+    ]
+  },
+  "确认准备就绪子页面": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": "确认试炼之地准备就绪子页面.png"
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "next": [
+      "确认扫荡券数量足够"
+    ]
+  },
+  "确认扫荡券数量足够": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "普通招募确定.png"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "pre_delay": 400,
+    "next": [
+      "识别生存挑战进行情况",
+      "可能结束后点击开始扫荡"
+    ]
+  },
+  "识别生存挑战进行情况": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "停止生存挑战扫荡"
+        ]
+      }
+    },
+    "action": {
+      "type": "DoNothing",
+      "param": {}
+    },
+    "next": [
+      "确认扫荡券数量足够"
+    ]
+  },
+  "可能结束后点击开始扫荡": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "1开始扫荡"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "next": [
+      "识别到扫荡结束"
+    ]
+  },
+  "识别到扫荡结束": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": [
+          "没有可以出战的忍者"
+        ]
+      }
+    },
+    "action": {
+      "type": "DoNothing",
+      "param": {}
+    },
+    "next": [
+      "退出生存挑战"
+    ]
+  },
+  "退出生存挑战": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "生存挑战返回"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    }
+  },
+  "识别主页特征": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": "主页面特征.png"
+      }
+    },
+    "action": {
+      "type": "DoNothing",
+      "param": {}
+    },
+    "next": [
+      "滑动寻找"
+    ]
+  }
+}

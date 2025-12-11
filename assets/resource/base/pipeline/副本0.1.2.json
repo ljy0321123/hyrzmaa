@@ -1,0 +1,224 @@
+{
+    "刷副本": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "DoNothing",
+            "param": {}
+        },
+        "next": [
+            "返回",
+            "副本"
+        ]
+    },
+    "返回": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "fanhui.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "副本"
+        ]
+    },
+    "副本": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "maoxiankaishi.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "章节",
+            "再次识别副本"
+        ]
+    },
+    "再次识别副本": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": [
+                    "maoxiankaishi.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "pre_delay": 400,
+        "next": [
+            "副本"
+        ]
+    },
+    "章节": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "tili.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    560,
+                    185,
+                    90,
+                    300
+                ]
+            }
+        },
+        "next": [
+            "关卡"
+        ]
+    },
+    "关卡": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "new.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    200,
+                    180,
+                    90,
+                    150
+                ]
+            }
+        },
+        "next": [
+            "出战"
+        ]
+    },
+    "出战": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "chuzhan.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 5000,
+        "next": [
+            "剧情或战斗"
+        ]
+    },
+    "剧情或战斗": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    560,
+                    185,
+                    90,
+                    300
+                ]
+            }
+        },
+        "next": [
+            "剧情",
+            "战斗"
+        ]
+    },
+    "剧情": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "tiaoguo.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "next": [
+            "战斗"
+        ]
+    },
+    "战斗": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": "自"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {}
+        },
+        "post_delay": 100000,
+        "next": [
+            "结算"
+        ]
+    },
+    "结算": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "jiesuan.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    1000,
+                    120,
+                    100,
+                    200
+                ]
+            }
+        },
+        "post_wait_freezes": 10000,
+        "next": [
+            "新功能",
+            "刷副本"
+        ]
+    },
+    "新功能": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "template": "xingongneng.png"
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    500,
+                    500,
+                    200,
+                    150
+                ]
+            }
+        },
+        "post_wait_freezes": 2000,
+        "next": [
+            "刷副本"
+        ]
+    }
+}

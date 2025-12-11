@@ -1,0 +1,75 @@
+{
+    "滑动寻找": {
+        "action": "Swipe",
+        "begin": [
+            970,
+            115,
+            50,
+            54
+        ],
+        "end": [
+            224,
+            115,
+            40,
+            54
+        ],
+        "next": "尝试进入试炼之地"
+    },
+    "尝试进入试炼之地": {
+        "recognition": "OCR",
+        "expected": "之地",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "识别试炼之地特征",
+            "识别主页特征"
+        ]
+    },
+    "识别主页特征": {
+        "recognition": "TemplateMatch",
+        "template": "主页面特征.png",
+        "next": "滑动寻找"
+    },
+    "识别试炼之地特征": {
+        "recognition": "TemplateMatch",
+        "template": "已进入试炼之地特征.png",
+        "next": "进入生存挑战"
+    },
+    "进入生存挑战": {
+        "recognition": "TemplateMatch",
+        "template": "生存挑战.png",
+        "action": "Click",
+        "next": "开始扫荡生存挑战"
+    },
+    "开始扫荡生存挑战": {
+        "recognition": "TemplateMatch",
+        "template": "试炼之地开始扫荡.png",
+        "post_delay": 1000,
+        "action": "Click",
+        "next": [
+            "生存挑战准备就绪",
+            "确认扫荡券数量足够"
+        ]
+    },
+    "生存挑战准备就绪": {
+        "recognition": "TemplateMatch",
+        "template": "试炼之地准备就绪.png",
+        "next": "确认准备就绪子页面"
+    },
+    "确认准备就绪子页面": {
+        "recognition": "TemplateMatch",
+        "template": "确认试炼之地准备就绪子页面.png",
+        "action": "Click"
+    },
+    "确认扫荡券数量足够": {
+        "recognition": "TemplateMatch",
+        "template": "确认扫荡券数量足够.png",
+        "action": "Click",
+        "target": [
+            421,
+            426,
+            193,
+            58
+        ]
+    }
+}

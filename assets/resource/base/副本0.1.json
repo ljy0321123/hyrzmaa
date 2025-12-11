@@ -1,0 +1,76 @@
+{ "刷副本":
+   {
+      "next":["返回","副本"]
+},
+  "返回":
+  {
+   "recognition":"TemplateMatch",
+   "template":"fanhui.png",
+   "action":"Click",
+   "next":"副本"
+},
+  "副本":
+  {
+   "recognition":"TemplateMatch",
+   "template":"maoxiankaishi.png",
+   "action":"Click",
+   "next":"章节"
+},
+"章节":
+{
+    "recognition":"TemplateMatch",
+    "template":"tili.png",
+    "action":"Click",
+    "target":[560,185,90,300],
+    "next":"关卡"
+},
+"关卡":{"recognition":"TemplateMatch",
+    "template":"new.png",
+     "action":"click",
+    "target":[200,180,90,150],
+    "next":"出战"
+    },
+    "出战":
+    {"recognition":"TemplateMatch",
+    "template":"chuzhan.png",
+    "action":"Click",
+    "post_delay":5000,
+    "next":"剧情或战斗"
+    },
+    "剧情或战斗":
+    {    "action":"Click",
+       "target":[560,185,90,300],
+        "next":["剧情","战斗"]
+    },
+    "剧情":
+    {
+        "recognition":"TemplateMatch",
+        "template":"tiaoguo.png",
+        "action":"Click",
+        "next":"战斗"
+    },
+    "战斗":
+    {
+        "recognition":"OCR",
+        "expected":"自",
+        "action":"Click",
+        "post_delay":100000,
+        "next":"结算"
+    },
+    "结算":
+    {"recognition":"TemplateMatch",
+    "template":"jiesuan.png",
+    "action":"Click",
+    "target":[1000,120,100,200],"post_wait_freezes":10000,
+    "next":["新功能","刷副本"]
+    },
+    "新功能":
+    {
+        "recognition":"TemplateMatch",
+        "template":"xingongneng.png",
+        "action":"Click",
+        "target":[500,500,200,150],"post_wait_freezes":2000,
+        "next":"刷副本"
+    }
+   
+    }

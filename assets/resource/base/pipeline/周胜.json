@@ -1,0 +1,68 @@
+{
+    "局内": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    972,
+                    614,
+                    58,
+                    49
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "二技能"
+        ]
+    },
+    "二技能": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": [
+                    990,
+                    471,
+                    57,
+                    55
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "普攻"
+        ]
+    },
+    "普攻": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {}
+        },
+        "action": {
+            "type": "LongPress",
+            "param": {
+                "target": [
+                    1103,
+                    558,
+                    75,
+                    78
+                ]
+            }
+        },
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "局内"
+        ]
+    }
+}

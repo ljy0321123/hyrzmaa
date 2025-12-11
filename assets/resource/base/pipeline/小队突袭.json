@@ -1,0 +1,67 @@
+{"小队突袭":{
+        "action":"Swipe",
+        "begin":[970,115,50,54],
+        "end":[224,115,40,54],
+        "next":"再次滑动"
+
+    },
+    "再次滑动":{
+        "action":"Swipe",
+        "begin":[970,115,50,54],
+        "end":[224,115,40,54],"post_wait_freezes":500,
+        "next":"进入小队突袭"},
+    "进入小队突袭":
+    {
+        "recognition":"OCR",
+        "expected":"突袭",
+        "target":[750,213,21,58],
+        "action":"Click",
+    "next":"组织助战小队突袭"},
+    "组织助战小队突袭":
+    {
+        "recognition":"TemplateMatch",
+        "template":"组织助战.png",
+        "action":"Click",
+        "post_delay":500,
+        "next":"我的助战中的奖励"},
+"我的助战中的奖励":{
+    "recognition":"TemplateMatch",
+    "template":"我的助战.png",
+    "action":"Click",
+    "next":"领取我的助战中的奖励"
+},
+"领取我的助战中的奖励":
+{
+    "recognition":"TemplateMatch",
+    "template":"领取助战收益.png",
+    "action":"Click",
+    "next":"从我的助战返回组织助战"
+},
+"从我的助战返回组织助战":
+{
+    "recognition":"TemplateMatch",
+    "template":"从我的助战返回.png", 
+    "action":"Click",
+    "target":[53,656,116,37],
+    "next":"检测小队突袭剩余次数"
+},
+"检测小队突袭剩余次数":
+{   "recognition":"OCR",
+    "expected":"今日可收益次数",
+    "next":["小队突袭剩余","小队突袭次数已用完"]
+},
+"小队突袭次数已用完":
+{
+    "recognition":"TemplateMatch",
+    "template":"小队突袭今日收益次数已达上限.png",
+    "roi":[526,656,283,45]
+},
+"小队突袭剩余":
+{
+    "recognition":"TemplateMatch",
+    "template":"wochanshunidemeng.png",
+    "action":"Click",
+    "target":[1144,583,82,58],"post_delay":120000,
+    "next":"组织助战小队突袭"
+}
+}

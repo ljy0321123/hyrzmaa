@@ -1,0 +1,265 @@
+{ "招财":
+    {
+        "action":"Click",
+        "target":[748,26,26,27],
+        "post_delay":3000,
+        "next":"招财按钮"
+    },
+    "招财按钮":
+    {
+        "recognition":"TemplateMatch",
+        "template":"mianfei1.png",
+        "action":"Click",
+        "post_wait_freezes":100,
+        "next":"再次免费招财"
+    },
+    "再次免费招财":
+    {
+        "recognition":"TemplateMatch",
+        "template":"mianfei1.png",
+        "action":"Click",
+        "next":"退出招财"
+    },
+    "退出招财":
+    {
+        "recognition":"TemplateMatch",
+        "template":"laicaifanhui.png",
+        "action":"Click",
+        "next":"滑动"
+    },
+    "滑动":
+    {
+        "action":"Swipe",
+        "begin":[971,116,49,55],
+        "end":[225,116,39,55],
+        "next":"丰饶之间"
+    },
+    "丰饶之间":
+    {
+        "action":"Click",
+        "target":[313,406,36,60],
+        "post_wait_freezes":1000,
+        "next":"进入丰饶"
+    },
+    "进入丰饶":
+    {
+        "recognition":"TemplateMatch",
+        "template":"tiaozhan.png",
+        "action":"Click",
+        "post_delay":5000,
+        "next":"打丰饶"
+    },
+    "打丰饶":
+    {
+        "action":"LongPress",
+        "target":[1099,551,85,83],
+        "duration":200000,
+        "next":"退出丰饶之间结算画面"
+    },
+    "退出丰饶之间结算画面":
+    {
+        "recognition":"TemplateMatch",
+        "template":"fengraojiesuan.png",
+        "action":"Click",
+        "target":[980,446,19,39],
+        "next":["升级","退出丰饶之间"]//升级或招募
+    },
+    "升级":
+    {
+        "recognition":"TemplateMatch",
+        "template":"ji.png",
+        "action":"Click",
+        "target":[734,491,128,79],
+        "next":"退出丰饶之间"
+    },
+    "退出丰饶之间":
+    {
+        "recognition":"TemplateMatch",
+        "template":"fengraofanhui.png",
+        "action":"Click",
+        "post_delay":3000
+    },
+    "招募":
+    {
+        "recognition":"TemplateMatch",
+        "template":"zhaomu.png",
+        "action":"Click",
+        "next":"普通招募"
+    },
+    "普通招募":
+    {
+        "recognition":"TemplateMatch",
+        "template":"putongzhaomu.png",
+        "action":"Click",
+        "next":["用招募券","免费"]
+    },
+    "免费":
+    {
+        "recognition":"TemplateMatch",
+        "template":"mianfeizhaomu.png",
+        "action":"Click",
+        "next":"免费招募"
+
+    },"免费招募":
+    {
+        "recognition":"TemplateMatch",
+        "template":"mianfeiqueding.png",
+        "action":"Click",
+        "next":"从招募返回"
+    },
+    "用招募券":
+    {
+        "recognition":"TemplateMatch",
+        "template":"yongquan.png",
+        "action":"Click",
+        "next":"确认招募"
+    },
+    "确认招募":
+    {
+        "recognition":"TemplateMatch",
+        "template":"queding.png",
+        "action":"Click",
+        "next":"招募成功"
+    },
+    //没有写没券的后续，没有高招免费招募
+    "招募成功":
+    {
+        "recognition":"TemplateMatch",
+        "template":"zhaomuwancheng.png",
+        "action":"Click",
+        "target":[441,532,184,60],
+        "next":"从招募返回"
+    },
+    "从招募返回":
+    {
+        "recognition":"TemplateMatch",
+        "template":"zhaomufanhui.png",
+        "action":"Click",
+        "post_delay":3000
+    },
+
+"进入装备页面":
+{
+    "recognition":"TemplateMatch",
+    "template":"装备.png",
+    "action":"Click",
+    "next":"装备子页面中的装备"
+},
+    "装备子页面中的装备":
+    {
+        "recognition":"TemplateMatch",
+        "template":"装备子页面中的装备.png",
+        "action":"Click","post_delay":1000,
+    
+    "next":"可扫荡装备"
+},
+"可扫荡装备":
+{
+    "recognition":"OCR",
+    "expected":"可扫荡",
+    "index":0,
+    "action":"Click",
+    "next":["扫荡","一键扫荡"]
+},
+"一键扫荡":
+{
+    "recognition":"TemplateMatch",
+    "template":"一键扫荡.png",
+    "action":"Click","post_delay":500,
+    "next":"开始扫荡"
+},
+"扫荡":
+{
+    "recognition":"TemplateMatch",
+    "template":"扫荡【两个字】.png",
+    "action":"Click",
+    "next":"开始扫荡"
+},
+"开始扫荡":
+{
+    "recognition":"TemplateMatch",
+    "template":"开始扫荡.png",
+    "index":0,
+    "action":"Click","post_delay":1000,
+    "next":["体力不足确认","点击加速扫荡1"]
+},
+"点击加速扫荡1":
+{"action":"Click",
+    "target" : [84,315,123,92],
+    "post_delay":1000,
+    "next":"点击加速扫荡2"
+},
+"点击加速扫荡2":
+{
+    "action":"Click",
+    "target" : [84,315,123,92],
+    "post_delay":1000,
+    "next":"寻找装备页面"
+},
+"寻找装备页面":
+{
+    "action":"Click",
+    "target":[48,317,70,62],
+    "post_delay":1000,
+    "next":["识别装备页面","寻找装备页面"]
+},
+"识别装备页面":
+{
+    "recognition":"TemplateMatch",
+    "template":"装备页面特征.png",
+    "next":["可扫荡装备","可合成装备"]
+},
+"可合成装备":
+{
+    "recognition":"OCR",
+    "expected":"合","index":0,
+    "action":"Click","post_delay":500,
+    "next":"合成"
+}, 
+"合成":
+{
+    "recognition":"OCR",
+    "expected":"合成",
+    "action":"Click",
+    "next":"装备已合成材料"},
+"装备已合成材料":{
+    "recognition":"TemplateMatch",
+    "template":"装备已合成材料.png",
+    "action":"Click",
+    "next":["可合成装备","可扫荡装备","进阶装备"]
+},
+"进阶装备":
+{
+    "recognition":"OCR",
+    "expected":"进阶","pre_delay":5000,
+    "action":"Click",
+    "next":"可扫荡装备"
+},
+"体力不足确认":
+{
+    "recognition":"TemplateMatch",
+    "template":"购买体力.png",
+    "action":"Click",
+    "target":[861,199,33,35],"post_delay":500,
+    "next":"从装备返回主页面1"
+},
+"从装备返回主页面1":
+{
+    "action":"Click",
+    "target" : [84,315,123,92],"post_delay":500,
+    "next":"从装备返回主页面2"
+},
+"从装备返回主页面2":
+{
+    
+    "action":"Click",
+    "target" : [84,315,123,92],"post_delay":500,
+    "next":"从装备返回主页面3"
+},
+"从装备返回主页面3":
+{
+    "recognition":"TemplateMatch",
+    "template":"装备界面的返回.png",
+    "action":"Click"
+}
+}

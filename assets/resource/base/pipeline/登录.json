@@ -1,0 +1,62 @@
+{
+    "登录": {
+        "next": [
+            "第一次确认关闭登陆活动页面",
+            "领取登录奖励",
+            "已经入主页面"
+        ]
+    },
+    "第一次确认关闭登陆活动页面": {
+        "recognition": "TemplateMatch",
+        "template": "返回备份.png",
+        "post_delay": 500,
+        "action": "Click",
+        "next": [
+            "第二次确认关闭登陆活动页面",
+            "领取登录奖励",
+            "已经入主页面"
+        ]
+    },
+    "第二次确认关闭登陆活动页面": {
+        "recognition": "TemplateMatch",
+        "template": "返回备份.png",
+        "post_delay": 500,
+        "action": "Click",
+        "next": [
+            "第三次确认关闭登陆活动页面",
+            "领取登录奖励",
+            "已经入主页面"
+        ]
+    },
+    "第三次确认关闭登陆活动页面": {
+        "recognition": "TemplateMatch",
+        "template": "返回备份.png",
+        "post_delay": 500,
+        "action": "Click",
+        "next": [
+            "第四次确认关闭登陆活动页面",
+            "领取登录奖励",
+            "已经入主页面"
+        ]
+    },
+    "第四次确认关闭登陆活动页面": {
+        "recognition": "TemplateMatch",
+        "template": "返回备份.png",
+        "post_delay": 500,
+        "action": "Click",
+        "next": "领取登录奖励"
+    },
+    "领取登录奖励": {
+        "recognition": "TemplateMatch",
+        "template": "登录奖励领取.png",
+        "action": "Click",
+        "next": [
+            "第一次确认关闭登陆活动页面",
+            "已经入主页面"
+        ]
+    },
+    "已经入主页面": {
+        "recognition": "TemplateMatch",
+        "template": "主页面特征.png"
+    }
+}
