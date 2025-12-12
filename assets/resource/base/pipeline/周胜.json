@@ -1,68 +1,414 @@
 {
-    "局内": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    972,
-                    614,
-                    58,
-                    49
-                ]
-            }
-        },
-        "pre_delay": 0,
-        "post_delay": 0,
-        "next": [
-            "二技能"
+  "日常胜利检测主页面": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "主页面特征.png"
         ]
+      }
     },
-    "二技能": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "Click",
-            "param": {
-                "target": [
-                    990,
-                    471,
-                    57,
-                    55
-                ]
-            }
-        },
-        "pre_delay": 0,
-        "post_delay": 0,
-        "next": [
-            "普攻"
-        ]
+    "action": {
+      "type": "DoNothing",
+      "param": {}
     },
-    "普攻": {
-        "recognition": {
-            "type": "DirectHit",
-            "param": {}
-        },
-        "action": {
-            "type": "LongPress",
-            "param": {
-                "target": [
-                    1103,
-                    558,
-                    75,
-                    78
-                ]
-            }
-        },
-        "pre_delay": 0,
-        "post_delay": 0,
-        "next": [
-            "局内"
+    "next": [
+      "进入功能页面"
+    ]
+  },
+  "进入功能页面": {
+    "recognition": {
+      "type": "DirectHit",
+      "param": {}
+    },
+    "action": {
+      "type": "Click",
+      "param": {
+        "target": [
+          1005,
+          642,
+          32,
+          35
         ]
+      }
+    },
+    "next": [
+      "识别进入功能页面"
+    ]
+  },
+  "识别进入功能页面": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "功能页面特征.png"
+        ]
+      }
+    },
+    "action": {
+      "type": "DoNothing",
+      "param": {}
+    },
+    "next": [
+      "功能页面中间节点"
+    ]
+  },
+  "功能页面中间节点": {
+    "recognition": {
+      "type": "DirectHit",
+      "param": {}
+    },
+    "action": {
+      "type": "DoNothing",
+      "param": {}
+    },
+    "next": [
+      "确认返回功能最上端",
+      "返回功能最上端"
+    ]
+  },
+  "确认返回功能最上端": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "功能最上端.png"
+        ]
+      }
+    },
+    "action": {
+      "type": "DoNothing",
+      "param": {}
+    },
+    "next": [
+      "寻找匹配"
+    ]
+  },
+  "返回功能最上端": {
+    "recognition": {
+      "type": "DirectHit",
+      "param": {}
+    },
+    "action": {
+      "type": "Swipe",
+      "param": {
+        "begin": [
+          99,
+          111,
+          63,
+          46
+        ],
+        "end": [
+          [
+            80,
+            561,
+            97,
+            58
+          ]
+        ]
+      }
+    },
+    "next": [
+      "功能页面中间节点"
+    ]
+  },
+  "功能页面滑动": {
+    "recognition": {
+      "type": "DirectHit",
+      "param": {}
+    },
+    "action": {
+      "type": "Swipe",
+      "param": {
+        "begin": [
+          108,
+          391,
+          55,
+          37
+        ],
+        "end": [
+          [
+            107,
+            100,
+            52,
+            46
+          ]
+        ]
+      }
+    },
+    "next": [
+      "寻找匹配"
+    ]
+  },
+  "寻找匹配": {
+    "recognition": {
+      "type": "DirectHit",
+      "param": {}
+    },
+    "action": {
+      "type": "DoNothing",
+      "param": {}
+    },
+    "next": [
+      "寻找并点击匹配",
+      "功能页面滑动"
+    ]
+  },
+  "寻找并点击匹配": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": [
+          "忍术对战"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "next": [
+      "进入匹配"
+    ]
+  },
+  "进入匹配": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "即刻前往忍术对战.png"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {
+        "target": [
+          868,
+          602,
+          100,
+          21
+        ]
+      }
+    },
+    "next": [
+      "开始匹配"
+    ]
+  },
+  "开始匹配": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "角斗场开始匹配.png"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "next": [
+      "日胜正在匹配",
+      "日胜再次点击匹配"
+    ]
+  },
+  "1长按普攻": {
+    "recognition": {
+      "type": "DirectHit",
+      "param": {}
+    },
+    "action": {
+      "type": "LongPress",
+      "param": {
+        "target": [
+          1109,
+          567,
+          59,
+          56
+        ],
+        "duration": 200000
+      }
+    },
+    "next": [
+      "每日匹配胜利",
+      "每日匹配完胜",
+      "每日匹配失败"
+    ]
+  },
+  "每日匹配胜利": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "决斗场胜利.png"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {
+        "target": [
+          833,
+          221,
+          87,
+          84
+        ]
+      }
+    },
+    "next": [
+      "点击决斗任务"
+    ]
+  },
+  "每日匹配完胜": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "决斗场完胜.png"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {
+        "target": [
+          833,
+          221,
+          87,
+          84
+        ]
+      }
+    },
+    "next": [
+      "点击决斗任务"
+    ]
+  },
+  "每日匹配失败": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "决斗场失败.png"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {
+        "target": [
+          833,
+          221,
+          87,
+          84
+        ]
+      }
+    },
+    "next": [
+      "开始匹配"
+    ]
+  },
+  "点击决斗任务": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "决斗任务.png"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "post_delay": 1000,
+    "next": [
+      "决斗场每日奖励"
+    ]
+  },
+  "决斗场每日奖励": {
+    "recognition": {
+      "type": "DirectHit",
+      "param": {}
+    },
+    "action": {
+      "type": "DoNothing",
+      "param": {}
+    },
+    "next": [
+      "领取决斗场日常奖励",
+      "退出决斗场奖励页面"
+    ]
+  },
+  "领取决斗场日常奖励": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "决斗场宝箱.png"
+        ],
+        "index": 0
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "pre_delay": 800,
+    "next": [
+      "决斗场每日奖励"
+    ]
+  },
+  "退出决斗场奖励页面": {
+    "recognition": {
+      "type": "DirectHit",
+      "param": {}
+    },
+    "action": {
+      "type": "Click",
+      "param": {
+        "target": [
+          32,
+          239,
+          30,
+          92
+        ]
+      }
     }
+  },
+  "日胜正在匹配": {
+    "recognition": {
+      "type": "OCR",
+      "param": {
+        "expected": [
+          "正在寻找旗鼓相当的对手"
+        ]
+      }
+    },
+    "action": {
+      "type": "DoNothing",
+      "param": {}
+    },
+    "next": [
+      "1长按普攻"
+    ]
+  },
+  "日胜再次点击匹配": {
+    "recognition": {
+      "type": "TemplateMatch",
+      "param": {
+        "template": [
+          "角斗场开始匹配.png"
+        ]
+      }
+    },
+    "action": {
+      "type": "Click",
+      "param": {}
+    },
+    "max_hit": 2,
+    "next": [
+      "开始匹配"
+    ]
+  }
 }
